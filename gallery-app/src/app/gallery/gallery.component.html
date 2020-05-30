@@ -1,33 +1,41 @@
 <section>
     <ul>
-        <li class="active">
+        <li
+            *ngFor="let picture of pictures; let i = index"
+            [class.active]="currentIndex === i"
+        >
             <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                alt=""
-                class="thumb"
-            />
-        </li>
-        <li>
-            <img
-                src="https://images.unsplash.com/photo-1516542076529-1ea3854896f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"
-                alt=""
-                class="thumb"
-            />
-        </li>
-        <li>
-            <img
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-                alt=""
+                (click)="handleClick(i)"
+                [src]="picture.src"
+                [alt]="picture.alt"
                 class="thumb"
             />
         </li>
     </ul>
 
-    <span class="prev"><</span>
-    <span class="next">></span>
+    <span *ngIf="currentIndex !== 0" (click)="handlePrev()" class="prev"
+        ><</span
+    >
+    <span
+        *ngIf="currentIndex < pictures.length - 1"
+        (click)="handleNext()"
+        class="next"
+        >></span
+    >
+
+    <!-- <span [class.hide]="currentIndex === 0" (click)="handlePrev()" class="prev"
+        ><</span
+    >
+    <span
+        [class.hide]="currentIndex === pictures.length - 1"
+        (click)="handleNext()"
+        class="next"
+        >></span
+    > -->
 
     <img
-        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+        [src]="pictures[currentIndex].src"
+        [alt]="pictures[currentIndex].alt"
         class="preview"
     />
 </section>

@@ -1,3 +1,5 @@
+<h2>Aktualna pogoda</h2>
+
 <label>Lokalizacja:</label>
 
 <input [(ngModel)]="location" />
@@ -5,5 +7,6 @@
 <button (click)="handleSearch()">Sprawdź</button>
 
 <div *ngIf="data">
-    Temperatura: {{ calculate(data.main.temp) }}C / {{ data.main.temp }} Kelvin
+    Temperatura: {{ data.main.temp | celsius | celsiusSuffix }} /
+    {{ data.main.temp }} Kelvin
 </div>

@@ -68,3 +68,7 @@ section span:hover {
     width: 100px;
     height: 60px;
 }
+
+.hide {
+    display: none;
+}
