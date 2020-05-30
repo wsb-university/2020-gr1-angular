@@ -1,3 +1,33 @@
-h1 {
-  color: pink;
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 30px;
+}
+
+.yellow {
+    color: yellow;
+}
+
+ul li {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    outline: none;
+}
+
+ul li:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+section {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+    padding: 50px 30px;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
 }

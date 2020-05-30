@@ -1,4 +1,19 @@
-<!-- <app-gallery></app-gallery> -->
-<app-weather></app-weather>
-<hr />
-<app-forecast></app-forecast>
+<header>
+    <ul>
+        <li
+            routerLink="/"
+            routerLinkActive="yellow"
+            [routerLinkActiveOptions]="{ exact: true }"
+        >
+            Aktualna pogoda
+        </li>
+        <li routerLink="/forecast" routerLinkActive="yellow">Prognoza</li>
+        <li routerLink="/gallery" routerLinkActive="yellow">Galeria</li>
+    </ul>
+</header>
+
+<section>
+    <router-outlet></router-outlet>
+</section>
+
+<footer>&copy; WSB</footer>
