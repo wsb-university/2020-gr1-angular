@@ -1,0 +1,6 @@
+<ul *ngIf="data !== null">
+  <li>{{ data.results[0].name }}</li>
+  <li>{{ data.results[1].name }}</li>
+</ul>
+
+<div *ngIf="data === null">Loading...</div>
