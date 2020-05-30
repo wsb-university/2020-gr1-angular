@@ -1,6 +1,12 @@
 <ul *ngIf="data !== null">
-  <li>{{ data.results[0].name }}</li>
-  <li>{{ data.results[1].name }}</li>
+  <li *ngFor="let element of data.results; let i = index">
+    <h3 (click)="handleSelectIndex(i)">{{ element.name }}</h3>
+    <app-details
+      *ngIf="i === selectedIndex"
+      [character]="element"
+      (clickEmitter)="handleDetailsClick($event)"
+    ></app-details>
+  </li>
 </ul>
 
 <div *ngIf="data === null">Loading...</div>
